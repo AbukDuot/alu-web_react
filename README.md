@@ -1,12 +1,13 @@
-# React Redux action creator+normalizr
+# React inline styling
 
 ## Resources
 
 ### Read or watch:
 
-- [Normalizr](https://intranet.aluswe.com/rltoken/Wcn6pQRMJtPeYKA9tSYZaw)
-- [Normalizing State Shape](https://intranet.aluswe.com/rltoken/olK9C_5w1YVjoEYX14enjw)
-- [Redux Getting started and core concepts](https://intranet.aluswe.com/rltoken/Yd9gOVf8dlCViUZFilvDMw)
-- [Redux Actions](https://intranet.aluswe.com/rltoken/QVQntahVkVJq8HCJYAOTHA)
-- [Async Actions](https://intranet.aluswe.com/rltoken/jGY3MvS-OcYkhCJll4EI8g)
-- [Writing tests for Redux](https://intranet.aluswe.com/rltoken/Sv_kLEaJEot36wuYUg2uDw)
+- [Aphrodite](https://intranet.aluswe.com/rltoken/GMElkZaDK8tzwoUykjg5bQ)
+- [Inline styling](https://intranet.aluswe.com/rltoken/oDhSx3rs0liyhIXWz1JXBA)
+- [Enzyme Render](https://intranet.aluswe.com/rltoken/A2NYzdlFL4inQcZ9uaqhLg)
+- [Enzyme Prop](https://intranet.aluswe.com/rltoken/WqwKL394cqRMkfVoZgUb9Q)
+- [CSS Viewport](https://intranet.aluswe.com/rltoken/pL4JqOcX8EPwPYEAXcajUw)
+- [CSS Media queries](https://intranet.aluswe.com/rltoken/gMcsR1Rm-u_RjP6ryboULQ)
+- [CSS Animations](https://intranet.aluswe.com/rltoken/96dW_2_R4zRDGC8nuSc26Q)

@@ -1,51 +1,52 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { StyleSheet, css } from "aphrodite";
-
-class BodySection extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { children, title } = this.props;
-    return (
-      <div className={css(styles.bodySection)}>
-        <h2 className={css(styles.bodySectionH2)}>{title}</h2>
-        {children}
-      </div>
-    );
-  }
-}
-
-BodySection.defaultProps = {
-  title: "",
-};
-
-BodySection.propTypes = {
-  title: PropTypes.string,
-};
-
-const screenSize = {
-  small: "@media screen and (max-width: 900px)",
-};
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
-  bodySection: {
-    display: "flex",
-    flexWrap: "wrap",
-    width: "100%",
-    [screenSize.small]: {
-      boxSizing: "border-box",
-      paddingLeft: "50px",
-      paddingRight: "50px",
-      paddingBottom: "20px",
-    },
-  },
+    /* bodySectionWithMarginBottom */
 
-  bodySectionH2: {
-    width: "100%",
-  },
+    bodySection: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '24px 0px 0px',
+        width: '90%',
+        maxWidth: '600px',
+        margin: '0 auto',
+    },
+    bodySectionWithMargin: {
+        marginBottom: '40px',
+    },
+
+    centeredWithMargin: {
+        margin: '12px auto',
+    }
 });
+
+class BodySection extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className={css(styles.bodySection)}>
+                <h2 className={css(styles.centeredWithMargin)}>{this.props.title}</h2>
+                {this.props.children}
+            </div>
+        )
+    }
+}
+
+BodySection.propTypes = {
+    title: PropTypes.string,
+    children: PropTypes.element,
+};
+
+BodySection.defaultProps = {
+    title: '',
+    children: {},
+};
 
 export default BodySection;
