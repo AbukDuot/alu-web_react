@@ -1,25 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App/App';
-import { Notifications } from './Notifications/Notifications';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore, applyMiddleware, compose } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import App from "./App/App";
+import uiReducer, { initialState } from "./reducers/uiReducer";
+import { Map } from "immutable";
 
-const rootId = document.getElementById("root");
-// isLoggedIn={true}
-ReactDOM.render(
-  <>
-      <App />
-    </>,
-    rootId
+// const store = createStore(
+//   uiReducer,
+//   Map(initialState),
+//   composeWithDevTools(applyMiddleware(thunk))
+// );
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+  uiReducer,
+  Map(initialState),
+  composeEnhancers(applyMiddleware(thunk))
 );
 
-if (module.hot && process.env.NODE_ENV === "development") {
-  module.hot.accept("./App", () => {
-    const NextApp = require("./App").default;
-    ReactDOM.render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>,
-      rootId
-    );
-  });
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
